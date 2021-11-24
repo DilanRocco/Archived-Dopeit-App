@@ -1,0 +1,43 @@
+//
+//  WritePostViewController.swift
+//  testAPI
+//
+//  Created by Dilan Piscatello on 4/5/20.
+//  Copyright © 2020 Dilan Piscatello. All rights reserved.
+//
+import Foundation
+import UIKit
+import Firebase
+class WritePostViewController: UIViewController,UITextViewDelegate {
+
+    @IBOutlet weak var postTextView: UITextView!
+ 
+    @IBOutlet weak var placeholderLabel: UILabel!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        placeholderLabel.isHidden = !textView.text.isEmpty
+    }
+    @IBAction func postButton(_ sender: Any) {
+        let postRef = Database.database().child("posts").childByAutoId()
+        let ok = j
+        
+        postRef.set
+    }
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
